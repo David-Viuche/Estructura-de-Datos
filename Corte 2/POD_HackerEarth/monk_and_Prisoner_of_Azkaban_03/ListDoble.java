@@ -14,12 +14,14 @@ import java.io.*;
 
 public class ListDoble {
 
-	Node head = null; // Empty List
+	Node head = null; //nodo principal de la lista
 
+	//funcion que verifica si la lista esta vacia
 	public boolean isEmpty() {
 		return head == null ? true : false;
 	}
 
+	//funcion que inserta un nodo al principio de la lista
 	public void insertAtBegin(Node newNode) {
 		if (isEmpty()) {
 			head = newNode;
@@ -30,6 +32,7 @@ public class ListDoble {
 		}
 	}
 
+	//funcion que inserta un nodo al final de la lista
 	public void insertAtEnd(Node newNode) {
 
 		if (isEmpty()) {
@@ -44,6 +47,7 @@ public class ListDoble {
 		}
 	}
 
+	//funcion que elimina un nodo al principio de la lista
 	public void deleteAtBegin() {
 
 		Node temp = head;
@@ -54,6 +58,7 @@ public class ListDoble {
 
 	}
 
+	//funcion que elimina un nodo al final de la lista
 	public void deleteAtEnd() {
 
 		Node temp = head;
@@ -64,6 +69,7 @@ public class ListDoble {
 		System.gc();
 	}
 
+	//funcion que inserta un nodo en el indice especificado
 	public void insertAtIndex(Node newNode, int index) {
 		if (index == 0) {
 			insertAtBegin(newNode);
@@ -84,6 +90,7 @@ public class ListDoble {
 		}
 	}
 
+	//funcion que elimina un nodo en el indice especificado
 	public void deleteAtIndex(int index) {
 
 		Node pre = head, del;
@@ -114,6 +121,7 @@ public class ListDoble {
 		}
 	}
 
+	//funcion que retorna el tamaño de la lista
 	public int listSize() {
 		Node temp = head;
 		int counter = 0;
@@ -124,6 +132,7 @@ public class ListDoble {
 		return counter;
 	}
 
+	//funcion que retorna el nodo en el indice especificado
 	public Node getNode(int index) {
 
 		if (listSize() < index)
@@ -136,6 +145,7 @@ public class ListDoble {
 		}
 	}
 
+	//funcion que imprime por consola la lista por consola 
 	public void printList() throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
