@@ -4,16 +4,23 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+/*
+ * Author: David viuche
+ * 
+ * implementacion de una fila 
+ * */
 
 
 public class Queue {
 
-	Node head = null; // Empty List
+	Node head = null; // Nodo principal de la Fila
 
+	//funcion para saber si la fila esta vacia
 	public boolean isEmpty() {
 		return head == null ? true : false;
 	}
 	
+	//funcion enfilar en el ultimo nodo
 	public void enqueue(Node newNode) {
 		if (isEmpty()) {
 			head = newNode;
@@ -26,6 +33,7 @@ public class Queue {
 		}
 	}
 	
+	//funcion desenfilar del principio de la fila 
 	public Node dequeue() {
 
 		Node temp = head;
@@ -34,7 +42,7 @@ public class Queue {
 		return temp;
 	}
 
-	
+	//funcion que imprime la fila por consola
 	public void printQueue() throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -47,6 +55,7 @@ public class Queue {
 		bw.flush();
 	}
 
+	//funcion que retorna el largo de la fila 
 	public int QueueSize() {
 		Node temp = head;
 		int counter = 1;
