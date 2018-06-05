@@ -7,21 +7,25 @@ import java.io.OutputStreamWriter;
 /*@author David Viuche 
  * NRC: 6285
  
+ implementacion de una Pila
  * */
 
 public class Stack {
 
-	Node head = null; // Empty List
+	Node head = null; // Nodo principal de la Pila
 
+	//funcion para saber si la Pila esta vacia
 	public boolean isEmpty() {
 		return head == null ? true : false;
 	}
 
+	//funcion para ingresar un nodo en la parte superior de la pila
 	public void push(Node newNode) {
 		newNode.next = head;
 		head = newNode;
 	}
 
+	//funcion eliminar de la parte superior de la pila
 	public Node pop() {
 
 		Node temp = head;
@@ -31,7 +35,7 @@ public class Stack {
 
 	}
 
-
+	//funcion que retorna el largo de la Pila 
 	public int StackSize() {
 		Node temp = head;
 		int counter = 1;
@@ -42,6 +46,7 @@ public class Stack {
 		return counter;
 	}
 
+	//funcion que imprime la Pila por consola
 	public void printStack() throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
