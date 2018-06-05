@@ -4,26 +4,19 @@ import java.io.*;
 /*@author David Viuche 
  * NRC: 6285
  * 
- * Input: 
- * 5
- * E 1 1
- * E 2 1
- * E 1 2
- * D
- * D
  * 
- * Output: 1 1
- * 		   1 2
  * */
 
 public class List {
 
-	Node head = null; // Empty List
+	Node head = null; //nodo principal de la lista
 
+	//funcion que verifica si la lista esta vacia
 	public boolean isEmpty() {
 		return head == null ? true : false;
 	}
 
+	//funcion que inserta un nodo al principio de la lista
 	public void insertAtBegin(Node newNode) {
 		if (isEmpty()) {
 			head = newNode;
@@ -63,6 +56,7 @@ public class List {
 //		}
 //	}
 
+	//funcion que inserta un nodo al final de la lista
 	public void insertAtEnd(Node newNode) {
 
 		if (isEmpty()) {
@@ -76,6 +70,7 @@ public class List {
 		}
 	}
 
+	//funcion que elimina un nodo al principio de la lista
 	public void deleteAtBegin() {
 
 		Node temp = head;
@@ -85,6 +80,7 @@ public class List {
 
 	}
 
+	//funcion que elimina un nodo al final de la lista
 	public void deleteAtEnd() {
 
 		Node temp = head;
@@ -95,6 +91,7 @@ public class List {
 		System.gc();
 	}
 
+	//funcion que inserta un nodo en el indice especificado
 	public void insertAtIndex(Node newNode, int index) {
 
 		Node temp;
@@ -108,6 +105,7 @@ public class List {
 
 	}
 
+	//funcion que elimina un nodo en el indice especificado
 	public void deleteAtIndex(int index) {
 
 		Node pre = head, del;
