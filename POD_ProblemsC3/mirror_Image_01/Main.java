@@ -49,7 +49,7 @@ public class Main {
 		String[] aux;
 		int n,q;
 		Tree tree = new Tree();
-		tree.insert(1);
+		tree.root = new Node(1);
 		try {
 			
 			//lectura de los datos n y q
