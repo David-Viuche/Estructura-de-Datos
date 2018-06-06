@@ -1,5 +1,6 @@
 package estructurasURI;
 
+
 import java.io.*;
 
 public class URI1025 {
