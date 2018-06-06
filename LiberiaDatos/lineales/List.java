@@ -10,7 +10,7 @@ public class List {
 		return head == null ? true : false;
 	}
 
-	// metodo que inserta un nuevo nodo en la lista en la parte de arriba
+	// metodo que inserta un nuevo nodo en la lista en la parte inicial
 	public void insertAtBegin(Node newNode) {
 		newNode.next = head;
 		head = newNode;
