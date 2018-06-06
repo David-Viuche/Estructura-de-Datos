@@ -41,44 +41,44 @@ output:
 public class Main {
 
 	public static void main(String[] args) {
-		//declaracion de variables iniciales
+		// declaracion de variables iniciales
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		String entrada = "";
 		String[] aux;
-		int n,q;
+		int n, q;
 		Tree tree = new Tree();
 		tree.root = new Node(1);
 		try {
-			
-			//lectura de los datos n y q
+
+			// lectura de los datos n y q
 			entrada = br.readLine();
 			aux = entrada.split(" ");
-			
-			n = Integer.parseInt(aux[0])-1;
+
+			n = Integer.parseInt(aux[0]) - 1;
 			q = Integer.parseInt(aux[1]);
-			
-			//ciclo para leer las entradas de las operaciones de insercion 
+
+			// ciclo para leer las entradas de las operaciones de insercion
 			for (int i = 0; i < n; i++) {
-				//lectura de la entrada
+				// lectura de la entrada
 				entrada = br.readLine();
 				aux = entrada.split(" ");
-				//insercion en el arbol
+				// insercion en el arbol
 				tree.insertMirror(Integer.parseInt(aux[0]), Integer.parseInt(aux[1]), aux[2], tree.root);
 			}
 
-			//ciclo para la lectura de los nodos a encontrar el nodod espejo
+			// ciclo para la lectura de los nodos a encontrar el nodod espejo
 			for (int i = 0; i < q; i++) {
-				//lectura de la entrada
+				// lectura de la entrada
 				entrada = br.readLine();
-				//llamada al metodo que retorna el nodo espejo
-				tree.mirrorNode(Integer.parseInt(entrada), tree.root);
-			
+				// llamada al metodo que retorna el nodo espejo
+				tree.mirrorNode(Integer.parseInt(entrada),tree.root);
+
 			}
-			
-//			Tree.preorder(tree.root);
-			
+
+			// Tree.preorder(tree.root);
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}

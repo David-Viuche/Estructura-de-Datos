@@ -14,10 +14,10 @@ public class Main {
 		String[] aux;
 		String entrada;
 		int n, x, z;
-		// n numero de araÃ±as
-		// x numero de araÃ±as que se toman
-		Queue araÃ±as = new Queue();
-		Queue araÃ±asEliminadas = new Queue();
+		// n numero de arañas
+		// x numero de arañas que se toman
+		Queue arañas = new Queue();
+		Queue arañasEliminadas = new Queue();
 		Node mayor, temp;
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,44 +32,44 @@ public class Main {
 			n = Integer.parseInt(aux[0]);
 			x = Integer.parseInt(aux[1]);
 
-			// lectura de los poderes inciales de las araÃ±as
+			// lectura de los poderes inciales de las arañas
 			entrada = br.readLine();
 			aux = entrada.split(" ");
 
-			// ingresar las araÃ±as a la fila
+			// ingresar las arañas a la fila
 			for (int i = 1; i <= n; i++)
-				araÃ±as.enqueue(new Node(Integer.parseInt(aux[i - 1]), i));
+				arañas.enqueue(new Node(Integer.parseInt(aux[i - 1]), i));
 
 			//ciclo principal
 			z = x;
 			for (int k = 0; k < z; k++) {
-				// declaracion de la araÃ±a mayor como la primera de la fila
-				mayor = araÃ±as.head.clone();
+				// declaracion de la araña mayor como la primera de la fila
+				mayor = arañas.head.clone();
 
-				//verificacion de que hay suficientes araÃ±as para tomar
-				if (araÃ±as.QueueSize() < x)
-					x = araÃ±as.QueueSize();
+				//verificacion de que hay suficientes arañas para tomar
+				if (arañas.QueueSize() < x)
+					x = arañas.QueueSize();
 
-				//pasar las X araÃ±as de la fila principal a las araÃ±as elminadas
+				//pasar las X arañas de la fila principal a las arañas elminadas
 				for (int i = 0; i < x; i++) {
-					temp = araÃ±as.dequeue().clone();
-					//vaidacion de la araÃ±a mayor 
+					temp = arañas.dequeue().clone();
+					//vaidacion de la araña mayor 
 					if (temp.power > mayor.power)
 						mayor = temp;
-					araÃ±asEliminadas.enqueue(temp);
+					arañasEliminadas.enqueue(temp);
 				}
-				//se agrega a la salida la araÃ±a de mayor poder 
+				//se agrega a la salida la araña de mayor poder 
 				salida.append(mayor.index + " ");
 
-				//se devuelven las araÃ±as eliminadas a la fila principal restando 1 de su poder
+				//se devuelven las arañas eliminadas a la fila principal restando 1 de su poder
 				for (int i = 0; i < x; i++) {
-					temp = araÃ±asEliminadas.dequeue().clone();
+					temp = arañasEliminadas.dequeue().clone();
 
 					if (temp.index != mayor.index) {
 						if (temp.power != 0) {
 							temp.power = temp.power - 1;
 						}
-						araÃ±as.enqueue(temp);
+						arañas.enqueue(temp);
 					}
 				}
 

@@ -25,6 +25,8 @@ public class Tree {
 		}
 		return temp;
 	}
+	
+	
 
 	//metodo que busca un nodo en el arbol
 	public Node searchMirror2(Node node, int value) {
