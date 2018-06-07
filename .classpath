@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="Parcial2"/>
 	<classpathentry kind="src" path="POD_ProblemsC3"/>
 	<classpathentry kind="src" path="Otros"/>
+	<classpathentry kind="src" path="triqui"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
